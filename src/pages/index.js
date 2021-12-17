@@ -6,7 +6,16 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const IndexPage = () => (
-  <Layout>
+  <main>
+    <title>Home Page</title>
+    <h1>Welcome to LoTR games!</h1>
+    <p>Lorem ipsum</p>
+  </main>
+)
+
+export default IndexPage
+/*
+<Layout>
     <Seo title="Home" />
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
@@ -25,7 +34,4 @@ const IndexPage = () => (
       <Link to="/using-ssr">Go to "Using SSR"</Link> <br />
       <Link to="/using-dsg">Go to "Using DSG"</Link>
     </p>
-  </Layout>
-)
-
-export default IndexPage
+  </Layout>*/
