@@ -1,17 +1,19 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
-import Seo from "../components/seo"
 
 const IndexPage = () => (
+  <Layout pageTitle="GameList">
   <main>
+    
     <title>Home Page</title>
     <h1>Welcome to LoTR games!</h1>
     <p>Lorem ipsum</p>
+    
   </main>
+  </Layout>
 )
+
 
 export default IndexPage
 /*
@@ -28,10 +30,5 @@ export default IndexPage
       alt="A Gatsby astronaut"
       style={{ marginBottom: `1.45rem` }}
     />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link> <br />
-      <Link to="/using-ssr">Go to "Using SSR"</Link> <br />
-      <Link to="/using-dsg">Go to "Using DSG"</Link>
-    </p>
+    
   </Layout>*/

@@ -1,32 +1,21 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import {
+  header,
+  flexbox,
+} from "../page.module.css"
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
+  <header className={header} >
+    <div className={flexbox}>
+      <h1>
+        <Link to="/" style={{color: 'gold'}}>
           {siteTitle}
         </Link>
       </h1>
+      <Link to="/">Home</Link> <br />
+      <Link to="/game/">GamesList</Link> <br />
     </div>
   </header>
 )
