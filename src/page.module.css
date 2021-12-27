@@ -3,20 +3,29 @@
 }
 body{
     background-color: lightgrey;
-
 }
+
+.pages{
+    margin: 10px;
+}
+
+
+
 /*  header and footer color  */
 /*  ----------------------------------------------------------------  */
-.header, .header a, .footer{
+.header, .header a, .footer ,.footer a{
     
     background-color:black;
     color: goldenrod;
 }
+.header a:hover,.footer a:hover{
+    color: gold;
+}
 /*  ----------------------------------------------------------------  */
-
 
 a{
     text-decoration: none;
+    color: rgb(185, 121, 1);
 }
 .flexbox {
     display: flex;
@@ -24,15 +33,36 @@ a{
     justify-content: space-between;
     align-items: center;
 }
-
+.flexboxGameListpage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.flexboxGamepage{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    padding-right: 5px;
+  }
+  .gameInfo{
+      padding-left: 10px;
+  }
+.imagecss{
+    width: 460px;
+}
+.gameImagecss{
+    width: 100%;
+    height: 80%
+}
 
 /*  header.js  */
 /*  ----------------------------------------------------------------  */
 
-.header a:hover{
-    color: gold;
-
+.header{
+    padding-left: 10px;
+    padding-bottom: 10px;
 }
+
 
 /*  ----------------------------------------------------------------  */
 
@@ -47,3 +77,18 @@ a{
     height:50px
 }
 /*  ----------------------------------------------------------------  */
+.gameIdList{
+    height:100%;
+}
+.gametitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+}
+
+.gameList{
+    border: 1px solid black;
+    width: 25%; 
+    margin: 5px;
+}

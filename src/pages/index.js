@@ -1,18 +1,19 @@
 import * as React from "react"
-
 import Layout from "../components/layout"
 
-const IndexPage = () => (
-  <Layout pageTitle="GameList">
+const IndexPage = () => {
+  return(
+  <Layout pageTitle="HomePage">
   <main>
-    
-    <title>Home Page</title>
-    <h1>Welcome to LoTR games!</h1>
-    <p>Lorem ipsum</p>
+    <div>
+      <title>Home Page</title>
+      <h1>Welcome to LoTR games!</h1>
+      <p>On this website you will find games of Lord of the Rings</p>
+    </div>
     
   </main>
-  </Layout>
-)
+  </Layout>)
+}
 
 
 export default IndexPage
