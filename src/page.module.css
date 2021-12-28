@@ -34,7 +34,7 @@ body{
     flex-wrap: wrap;
 }
 
-.flexbox,.flexboxHomePage,.flexboxGameListTitlePage,.flexboxGameListpage{
+.flexbox,.flexboxGameListpage{
     justify-content: space-evenly;
 }
 
@@ -44,6 +44,7 @@ body{
 
 .flexboxHomePage,.flexboxGameListTitlePage{
     padding-bottom: 25px;
+    justify-content: space-between;
 }
 
 .flexboxGamepage{
