@@ -1,48 +1,69 @@
 import * as React from "react"
 import Layout from "../components/layout"
-import { graphql } from 'gatsby'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image' 
-import{ gameImageHomePage, gameList, flexboxGameListpage, gameIdList, flexboxHomePage, bannerImg, homepageDescription } from "../page.module.css"
+import { graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import {
+  gameImageHomePage,
+  gameList,
+  flexboxGameListpage,
+  gameIdList,
+  flexboxHomePage,
+  bannerImg,
+  homePageDiv,
+} from "../page.module.css"
 
-const IndexPage = ({data: {wpPage: {homePage}}}) => {
-  let featuredProducts = homePage.featuredProducts;
-  let bannerPhoto = getImage(homePage.bannerPhoto.localFile);
-  return(
-  <Layout pageTitle="HomePage">
-  <main>
-    <div>
-      <title>Home Page</title>
-      <div className={flexboxHomePage}>
+const IndexPage = ({
+  data: {
+    wpPage: { homePage },
+  },
+}) => {
+  let featuredProducts = homePage.featuredProducts
+  let bannerPhoto = getImage(homePage.bannerPhoto.localFile)
+  return (
+    <Layout pageTitle="HomePage">
+      <main>
         <div>
-          <h1>{homePage.title}</h1>
-          <p className={homepageDescription}>{homePage.description}</p>
-        </div>
-        <GatsbyImage className={bannerImg} image={bannerPhoto} alt={homePage.bannerPhoto.altText} />
-      </div>
-      <h2>{featuredProducts.title}</h2>
-      <p>{featuredProducts.description}</p>
-      
-      <div className={flexboxGameListpage}>
-      {featuredProducts.games.map(games =>{
-        let image = getImage(games.games.thumbnail.localFile)
-        return(
-          <div className={gameList}>
-              <div key={games.id} className={gameIdList}>
+          <title>Home Page</title>
+          <div className={flexboxHomePage}>
+            <div className={homePageDiv}>
+              <h1>{homePage.title}</h1>
+              <p>{homePage.description}</p>
+            </div>
+            <div></div>
+            <GatsbyImage
+              className={bannerImg}
+              image={bannerPhoto}
+              alt={homePage.bannerPhoto.altText}
+            />
+          </div>
+          <h2>{featuredProducts.title}</h2>
+          <p>{featuredProducts.description}</p>
 
-                <GatsbyImage className={gameImageHomePage} image={image} alt={games.games.thumbnail.altText} />
-              </div>
-          </div>)
-        })}
-      </div>
-    </div>
-    
-  </main>
-  </Layout>)
+          <div className={flexboxGameListpage}>
+            {featuredProducts.games.map(games => {
+              let image = getImage(games.games.thumbnail.localFile)
+              return (
+                <div className={gameList}>
+                  <div key={games.id} className={gameIdList}>
+                    <GatsbyImage
+                      className={gameImageHomePage}
+                      image={image}
+                      alt={games.games.thumbnail.altText}
+                    />
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </main>
+    </Layout>
+  )
 }
 
 export const query = graphql`
   query {
-    wpPage(slug: {eq: "home-page"}) {
+    wpPage(slug: { eq: "home-page" }) {
       homePage {
         bannerPhoto {
           altText
@@ -73,11 +94,10 @@ export const query = graphql`
         }
         title
         description
-      } 
+      }
     }
   }
 `
-
 
 export default IndexPage
 /*

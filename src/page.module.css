@@ -5,13 +5,14 @@ body{
     background-color: lightgrey;
 }
 
+
+/*  pages  */
+/*  ----------------------------------------------------------------  */
 .pages{
     margin: 10px;
 }
+/*  ----------------------------------------------------------------  */
 
-.homepageDescription{
-    width: 50%;
-}
 
 /*  header and footer color  */
 /*  ----------------------------------------------------------------  */
@@ -25,51 +26,32 @@ body{
 }
 /*  ----------------------------------------------------------------  */
 
-a{
-    text-decoration: none;
-    color: rgb(185, 121, 1);
-}
-.flexbox {
+
+/*  flexbox  */
+/*  ----------------------------------------------------------------  */
+.flexbox,.flexboxHomePage,.flexboxGameListTitlePage,.flexboxGameListpage,.flexboxGamepage{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
 }
-.flexboxHomePage,.flexboxGameListTitlePage{
-    display: flex;
-    padding-bottom: 25px;
-    justify-content: space-between;
-}
-.flexboxGameListpage {
-    display: flex;
-    flex-wrap: wrap;
+
+.flexbox,.flexboxHomePage,.flexboxGameListTitlePage,.flexboxGameListpage{
     justify-content: space-evenly;
 }
-.flexboxGameListTitlePage{
-    display: flex;
+
+.flexbox {
+    align-items: center;
+}
+
+.flexboxHomePage,.flexboxGameListTitlePage{
     padding-bottom: 25px;
-    justify-content: space-between;
 }
+
 .flexboxGamepage{
-    display: flex;
     flex-direction: row;
-    flex-wrap:wrap;
     padding-right: 5px;
-  }
-  .gameInfo{
-      padding-left: 10px;
-  }
-.imagecss{
-    width: 460px;
 }
-.gameImageGameListPage{
-    width: 100%;
-    height: 80%
-}
-.gameImageHomePage{
-    width: 100%;
-    height: 100%
-}
+/*  ----------------------------------------------------------------  */
+  
 
 /*  header.js  */
 /*  ----------------------------------------------------------------  */
@@ -84,22 +66,31 @@ a{
 
 
 
-/*  header.js  */
+/*  footer and gametitle  */
 /*  ----------------------------------------------------------------  */
-.footer{
+.footer,.gametitle{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+/*  ----------------------------------------------------------------  */
+
+
+
+/*  layout.js  */
+/*  ----------------------------------------------------------------  */
+.footer{
     height:50px
 }
+/*  ----------------------------------------------------------------  */
+
+
+/*  gameList  */
 /*  ----------------------------------------------------------------  */
 .gameIdList{
     height:100%;
 }
 .gametitle{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 20%;
 }
 
@@ -108,7 +99,63 @@ a{
     width: 25%; 
     margin: 5px;
 }
+.gameInfo{
+    padding-left: 10px;
+}
 
+.gameImageGameListPage{
+  width: 100%;
+  height: 80%
+}
+.gameImageHomePage{
+  width: 100%;
+  height: 100%
+}
+
+/*  ----------------------------------------------------------------  */
+
+
+/*  images  */
+/*  ----------------------------------------------------------------  */
 .bannerImg{
     width: 25%;
+    height: max-content;
 }
+
+.imagecss{
+  width: 460px;
+}
+
+/*  ----------------------------------------------------------------  */
+
+
+/*  div  */
+/*  ----------------------------------------------------------------  */
+.homePageDiv{
+    width: 50%;
+}
+
+/*  ----------------------------------------------------------------  */
+
+
+/*  div  */
+/*  ----------------------------------------------------------------  */
+a{
+    text-decoration: none;
+    color: rgb(185, 121, 1);
+}
+/*  ----------------------------------------------------------------  */
+
+
+
+/*  media(mobile)  */
+/*  ----------------------------------------------------------------  */
+@media only screen and (max-width: 600px) {
+    .gameList{
+        width: 75%; 
+    }
+    .bannerImg,.homePageDiv{
+        width: 100%;
+    }
+  }
+  /*  ----------------------------------------------------------------  */
