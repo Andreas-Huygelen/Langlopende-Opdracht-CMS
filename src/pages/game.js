@@ -4,14 +4,22 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from 'gatsby-plugin-image' 
-import{ gameList, flexboxGameListpage, gameImagecss, gameIdList, gametitle } from "../page.module.css"
-const GamesPage = ({data: {allWpGame: {edges}}}) => {
+import{ gameList, flexboxGameListpage, gameImageGameListPage, gameIdList, gametitle, bannerImg, flexboxGameListTitlePage } from "../page.module.css"
+const GamesPage = ({data: {allWpGame: {edges},wpPage:{gamesPage}}}) => {
+  let gamepage = gamesPage
+  let bannerPhoto = getImage(gamepage.bannerPhoto.localFile)
   return (
     <Layout pageTitle="GameList">
       <title>GameList</title>
       <div>
-        <h1>GameList</h1> 
-          <div className={flexboxGameListpage}>
+      <div className={flexboxGameListTitlePage}>
+        <div>
+          <h1>GameList</h1> 
+          <p>{gamepage.description}</p>
+        </div>
+        <GatsbyImage className={bannerImg} image={bannerPhoto} alt={gamepage.bannerPhoto.altText} />
+      </div>
+        <div className={flexboxGameListpage}>
         {edges.map((item) => {
         const game = item.node.games;
         const slug = item.node.slug;
@@ -20,7 +28,7 @@ const GamesPage = ({data: {allWpGame: {edges}}}) => {
           <div className={gameList}>
           <Link to={`/Games/${slug}`}>
             <div key={item.node.id} className={gameIdList}>
-              <GatsbyImage className={gameImagecss} image={image} alt={game.thumbnail.altText} />
+              <GatsbyImage className={gameImageGameListPage} image={image} alt={game.thumbnail.altText} />
               <p className={gametitle}>{game.title}</p>
             </div>
           </Link>
@@ -48,6 +56,19 @@ export const query = graphql`
           }
           id
           slug
+        }
+      }
+    }
+    wpPage(slug: {eq: "products-page"}) {
+      gamesPage {
+        description
+        bannerPhoto {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(placeholder: DOMINANT_COLOR)
+            }
+          }
+          altText
         }
       }
     }
