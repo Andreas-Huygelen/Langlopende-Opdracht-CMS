@@ -6,7 +6,6 @@ import {
   flexboxGamepage,
   gameInfo,
   imagecss,
-  gameDescription,
 } from "../../page.module.css"
 
 const GamePage = ({
@@ -62,11 +61,13 @@ const GamePage = ({
           </div>
         </div>
         <h2 style={{ paddingTop: 20 }}>platforms</h2>
-        {platforms.map(platform => (
-          <p className={gameInfo}>{platform}</p>
+        {platforms.map((platform,i) => (
+          <div key={i}>
+            <p className={gameInfo}>{platform}</p>
+          </div>
         ))}
         <h2>description</h2>
-        <p className={gameDescription}>{game.description}</p>
+        <p>{game.description}</p>
       </div>
     </Layout>
   )

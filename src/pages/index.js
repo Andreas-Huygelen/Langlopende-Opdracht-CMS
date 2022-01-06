@@ -43,8 +43,8 @@ const IndexPage = ({
             {featuredProducts.games.map(games => {
               let image = getImage(games.games.thumbnail.localFile)
               return (
-                <div className={gameList}>
-                  <div key={games.id} className={gameIdList}>
+                <div key={games.id} className={gameList}>
+                  <div  className={gameIdList}>
                     <GatsbyImage
                       className={gameImageHomePage}
                       image={image}

@@ -42,9 +42,9 @@ const GamesPage = ({
             const slug = item.node.slug
             const image = getImage(game.thumbnail.localFile)
             return (
-              <div className={gameList}>
+              <div key={item.node.id} className={gameList}>
                 <Link to={`/Games/${slug}`}>
-                  <div key={item.node.id} className={gameIdList}>
+                  <div  className={gameIdList}>
                     <GatsbyImage
                       className={gameImageGameListPage}
                       image={image}

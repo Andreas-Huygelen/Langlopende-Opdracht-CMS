@@ -1,24 +1,26 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import logo from "../images/logo.png"
 import {
   header,
   flexbox,
+  logocss
 } from "../page.module.css"
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle }) => {
+  return(
+  
   <header className={header} >
     <div className={flexbox}>
-      <h1>
-        <Link to="/" style={{color: 'gold'}}>
-          {siteTitle}
-        </Link>
-      </h1>
+      <img className={logocss} src={logo} alt={siteTitle}/>
       <Link to="/">Home</Link> <br />
       <Link to="/game/">GamesList</Link> <br />
     </div>
   </header>
-)
+)}
+
+
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
